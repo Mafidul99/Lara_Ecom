@@ -14,12 +14,16 @@
         <div class="card">
             <div class="card-header">
                 <h3>My Orders Details
-                    <a href="{{url('admin/orders')}}" class="btn btn-danger btn-sm float-end mx-1">BACK</a>
+                    <a href="{{url('admin/orders')}}" class="btn btn-danger btn-sm float-end mx-1">
+                        <span class="fa fa-arrow-left"></span> BACK</a>
                         <a href="{{url('admin/invoice/'.$order->id)}}" target="_blank" class="btn btn-warning btn-sm float-end mx-1">
-                            View Invoice
+                            <span class="fa fa-eye"></span> View Invoice
                         </a>
                         <a href="{{url('admin/invoice/'.$order->id.'/generate')}}" class="btn btn-success btn-sm text-white float-end mx-1">
-                            Download Invoice
+                            <span class="fa fa-download"></span> Download Invoice
+                        </a>
+                        <a href="{{url('admin/invoice/'.$order->id.'/mail')}}" class="btn btn-info btn-sm text-white float-end mx-1">
+                            <span class="fa fa-envelope"></span> Send Invoice Gmail
                         </a>
                 </h3>
             </div>

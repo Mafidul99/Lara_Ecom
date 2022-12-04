@@ -43,6 +43,12 @@ Route::middleware(['auth'])->group(function(){
     Route::get('orders',[App\Http\Controllers\Frontend\OrderController::class, 'index']);
     Route::get('orders/{orderId}',[App\Http\Controllers\Frontend\OrderController::class, 'show']);
 
+    Route::get('profile',[App\Http\Controllers\Frontend\UserController::class, 'index']);
+    Route::post('profile',[App\Http\Controllers\Frontend\UserController::class, 'updateUserDetails']);
+
+    Route::get('change-password',[App\Http\Controllers\Frontend\UserController::class, 'passwordCreate']);
+    Route::post('change-password',[App\Http\Controllers\Frontend\UserController::class, 'changePassword']);
+
 });
 
 //thank page order//
@@ -102,6 +108,7 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
 
         Route::get('/invoice/{orderId}', 'viewInvoice');
         Route::get('/invoice/{orderId}/generate', 'generateInvoice');
+        Route::get('/invoice/{orderId}/mail', 'mailInvoice');
     });
 
     //Sliders Route

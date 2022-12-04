@@ -369,3 +369,11 @@
     color: #fff;
     width: 20px;
 }
+
+.form-control {
+    border: 1px solid #ddd !important;
+}
+
+.sidebar.nav.nav-item.active {
+    background-color: #c5c2c2 !important;
+}
