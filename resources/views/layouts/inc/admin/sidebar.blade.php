@@ -8,9 +8,9 @@
              </a>
          </li>
          <li class="nav-item">
-             <a class="nav-link" href="pages/charts/chartjs.html">
+             <a class="nav-link" href="{{url('admin/orders')}}">
                  <i class="mdi mdi-sale menu-icon"></i>
-                 <span class="menu-title">Sales</span>
+                 <span class="menu-title">Orders</span>
              </a>
          </li>
          <li class="nav-item">
@@ -66,19 +66,19 @@
              </a>
              <div class="collapse" id="auth">
                  <ul class="nav flex-column sub-menu">
-                     <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-                     <li class="nav-item"> <a class="nav-link" href="pages/samples/login-2.html"> Login 2 </a></li>
+                     <li class="nav-item"> <a class="nav-link" href="#"> Add User </a></li>
+                     <li class="nav-item"> <a class="nav-link" href="{{url('admin/users')}}"> View User </a></li>
                  </ul>
              </div>
          </li>
          <li class="nav-item">
-             <a class="nav-link" href="documentation/documentation.html">
+             <a class="nav-link" href="{{ url('admin/sliders') }}">
                  <i class="mdi mdi-view-dashboard menu-icon"></i>
                  <span class="menu-title">Home Slider</span>
              </a>
          </li>
          <li class="nav-item">
-             <a class="nav-link" href="documentation/documentation.html">
+             <a class="nav-link" href="{{url('admin/settings')}}">
                  <i class="mdi mdi-buffer menu-icon"></i>
                  <span class="menu-title">Site Setting</span>
              </a>

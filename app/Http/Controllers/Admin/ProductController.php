@@ -21,6 +21,8 @@ class ProductController extends Controller
         $products = Product::all();
         return view('admin.products.index', compact('products'));
     }
+
+
     public function create()
     {
         $categories = Category::all();
@@ -39,12 +41,14 @@ class ProductController extends Controller
             'category_id' =>$validatedData['category_id'],
             'name' =>$validatedData['name'],
             'slug' =>Str::slug($validatedData['slug']),
+            'brand' =>$validatedData['brand'],
             'small_description' =>$validatedData['small_description'],
             'description' =>$validatedData['description'],
             'original_price' =>$validatedData['original_price'],
             'selling_price' =>$validatedData['selling_price'],
             'quantity' =>$validatedData['quantity'],
             'trending' =>$request->trending == true ? '1':'0',
+            'featured' =>$request->featured == true ? '1':'0',
             'status' =>$request->status == true ? '1':'0',
             'meta_title' =>$validatedData['meta_title'],
             'meta_keyword' =>$validatedData['meta_keyword'],
@@ -105,12 +109,14 @@ class ProductController extends Controller
             'category_id' =>$validatedData['category_id'],
             'name' =>$validatedData['name'],
             'slug' =>Str::slug($validatedData['slug']),
+            'brand' =>$validatedData['brand'],
             'small_description' =>$validatedData['small_description'],
             'description' =>$validatedData['description'],
             'original_price' =>$validatedData['original_price'],
             'selling_price' =>$validatedData['selling_price'],
             'quantity' =>$validatedData['quantity'],
             'trending' =>$request->trending == true ? '1':'0',
+            'featured' =>$request->featured == true ? '1':'0',
             'status' =>$request->status == true ? '1':'0',
             'meta_title' =>$validatedData['meta_title'],
             'meta_keyword' =>$validatedData['meta_keyword'],
