@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2022 at 11:07 AM
+-- Generation Time: Dec 17, 2022 at 11:04 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `laravel_ecommerce`
+-- Database: `b15_33218501_ecommrence`
 --
 
 -- --------------------------------------------------------
@@ -36,15 +36,6 @@ CREATE TABLE `brands` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `brands`
---
-
-INSERT INTO `brands` (`id`, `name`, `slug`, `status`, `created_at`, `updated_at`, `category_id`) VALUES
-(1, 'nokia', 'noki7', 0, '2022-11-18 15:16:04', '2022-11-18 15:16:04', 1),
-(2, 'Apple', 'apple', 0, '2022-11-25 12:34:14', '2022-11-25 12:34:14', 1),
-(3, 'MI', 'mi', 0, '2022-11-25 13:09:49', '2022-11-26 10:36:42', 1);
 
 -- --------------------------------------------------------
 
@@ -82,15 +73,6 @@ CREATE TABLE `categories` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `categories`
---
-
-INSERT INTO `categories` (`id`, `name`, `slug`, `description`, `image`, `meta_title`, `meta_keyword`, `meta_description`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Mobile Apple', 'mobile', 'Mobile Apple All', 'uploads/category/1669395390.jpg', 'Mobile Apple All', 'Mobile Apple All', 'Mobile Apple All', '0', '2022-11-18 15:15:40', '2022-11-26 10:28:59'),
-(2, 'HP Leptop', 'hp-leptop', 'HP Leptop All Model', 'uploads/category/1669395455.jpeg', 'HP Leptop All Model', 'HP Leptop All Model', 'HP Leptop All Model', '0', '2022-11-25 11:27:35', '2022-11-25 11:27:35'),
-(3, 'Man Shirt', 'man-shirt-all-model', 'Man Shirt All Model', 'uploads/category/1669395506.jpg', 'Man Shirt All Model', 'Man Shirt All Model', 'Man Shirt All Model', '0', '2022-11-25 11:28:26', '2022-11-25 11:28:26');
-
 -- --------------------------------------------------------
 
 --
@@ -105,20 +87,6 @@ CREATE TABLE `colors` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `colors`
---
-
-INSERT INTO `colors` (`id`, `name`, `code`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Red', 'red', 0, '2022-11-19 13:14:33', '2022-11-19 14:00:44'),
-(2, 'Green', 'green', 0, '2022-11-19 13:15:09', '2022-11-19 14:00:32'),
-(4, 'Black', 'black', 0, '2022-11-19 14:00:19', '2022-11-19 14:00:19'),
-(5, 'Yellow', 'yellow', 0, '2022-11-19 14:01:06', '2022-11-26 14:07:01'),
-(6, 'Pink', 'pink', 0, '2022-11-22 09:26:09', '2022-11-22 09:26:09'),
-(7, 'Blue', 'blue', 0, '2022-11-22 09:26:45', '2022-11-22 09:26:45'),
-(8, 'Cyan', 'cyan', 0, '2022-11-22 09:28:59', '2022-11-26 14:08:35'),
-(9, 'Gold', 'gold', 0, '2022-11-22 09:29:24', '2022-11-26 14:09:03');
 
 -- --------------------------------------------------------
 
@@ -293,15 +261,6 @@ CREATE TABLE `products` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `products`
---
-
-INSERT INTO `products` (`id`, `category_id`, `name`, `slug`, `brand`, `small_description`, `description`, `original_price`, `selling_price`, `quantity`, `trending`, `featured`, `status`, `meta_title`, `meta_keyword`, `meta_description`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Apple Mobile Pro', 'apple-mobile-pro', 'Apple', 'Apple Mobile ProApple Mobile ProApple Mobile ProApple Mobile ProApple Mobile Pro', 'Apple Mobile ProApple Mobile ProApple Mobile ProApple Mobile Pro', 25000, 24000, 10, 1, 1, 0, 'Apple Mobile Pro', 'Apple Mobile Pro', 'Apple Mobile Pro', '2022-11-18 15:32:26', '2022-11-25 13:47:39'),
-(3, 1, 'Apple Mobile 13 Pro', 'apple-mobile-13-pro', 'Apple', 'Apple Mobile 13 ProApple Mobile 13 ProApple Mobile 13 Pro', 'Apple Mobile 13 ProApple Mobile 13 ProApple Mobile 13 ProApple Mobile 13 Pro', 25000, 24000, 10, 1, 1, 0, 'Apple Mobile 13 Pro', 'Apple Mobile 13 ProApple Mobile 13 ProApple Mobile 13 Pro', 'Apple Mobile 13 ProApple Mobile 13 Pro', '2022-11-19 14:47:17', '2022-11-25 13:48:07'),
-(6, 1, 'realme not 7 pro', 'realme-not-7-pro', 'MI', 'realme not 7 pro', 'realme not 7 pro', 15000, 13000, 13, 1, 0, 0, 'realme not 7 pro', 'realme not 7 pro', 'realme not 7 pro', '2022-11-25 13:21:42', '2022-11-25 13:48:27');
-
 -- --------------------------------------------------------
 
 --
@@ -315,15 +274,6 @@ CREATE TABLE `products_images` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `products_images`
---
-
-INSERT INTO `products_images` (`id`, `product_id`, `image`, `created_at`, `updated_at`) VALUES
-(15, 1, 'uploads/Products/16693995851.jpg', '2022-11-25 12:36:25', '2022-11-25 12:36:25'),
-(16, 3, 'uploads/Products/16693997191.jpg', '2022-11-25 12:38:39', '2022-11-25 12:38:39'),
-(17, 6, 'uploads/Products/16694023021.jpg', '2022-11-25 13:21:42', '2022-11-25 13:21:42');
 
 -- --------------------------------------------------------
 
@@ -339,27 +289,6 @@ CREATE TABLE `product_color` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `product_color`
---
-
-INSERT INTO `product_color` (`id`, `product_id`, `color_id`, `quantity`, `created_at`, `updated_at`) VALUES
-(1, 3, 1, 5, '2022-11-19 14:47:18', '2022-11-19 14:47:18'),
-(5, 1, 1, 1, '2022-11-25 03:36:43', '2022-11-28 10:35:57'),
-(6, 1, 2, 3, '2022-11-25 03:36:45', '2022-11-25 03:36:45'),
-(9, 3, 6, 3, '2022-11-25 03:37:55', '2022-11-25 03:37:55'),
-(10, 3, 7, 3, '2022-11-25 03:37:55', '2022-11-25 03:37:55'),
-(11, 3, 8, 3, '2022-11-25 03:37:56', '2022-11-25 03:37:56'),
-(12, 3, 9, 3, '2022-11-25 03:38:00', '2022-11-25 03:38:00'),
-(23, 6, 1, 12, '2022-11-25 13:21:43', '2022-11-25 13:21:43'),
-(24, 6, 2, 13, '2022-11-25 13:21:43', '2022-11-25 13:21:43'),
-(25, 6, 4, 12, '2022-11-25 13:21:43', '2022-11-25 13:21:43'),
-(26, 1, 6, 2, '2022-11-26 14:05:35', '2022-12-04 11:50:28'),
-(27, 1, 7, 1, '2022-11-26 14:05:35', '2022-12-04 11:50:27'),
-(28, 1, 5, 2, '2022-11-26 14:09:30', '2022-11-26 14:09:30'),
-(29, 1, 8, 1, '2022-11-26 14:09:30', '2022-11-28 10:35:58'),
-(30, 1, 9, 1, '2022-11-26 14:09:30', '2022-11-28 10:35:58');
 
 -- --------------------------------------------------------
 
@@ -415,9 +344,7 @@ CREATE TABLE `sliders` (
 --
 
 INSERT INTO `sliders` (`id`, `title`, `description`, `image`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Ecommerces Sliders Update', 'Ecommerces Sliders Update', 'uploads/slider/1669390095.png', 0, '2022-11-25 06:17:59', '2022-11-25 09:58:15'),
-(3, 'Sliders two update', 'Sliders two update', 'uploads/slider/1669390131.png', 0, '2022-11-25 09:58:51', '2022-11-25 09:58:51'),
-(4, 'Sliders 3 update', 'Sliders 3 update', 'uploads/slider/1669390164.jpg', 0, '2022-11-25 09:59:24', '2022-11-25 09:59:24');
+(1, 'Ecommerces Sliders Update', 'Ecommerces Sliders Update', 'uploads/slider/1669390095.png', 0, '2022-11-25 06:17:59', '2022-11-25 09:58:15');
 
 -- --------------------------------------------------------
 
@@ -442,9 +369,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `role_as`) VALUES
-(1, 'Admin Plane', 'admin@gmail.com', NULL, '$2y$10$yGrgHYJvnloX/65Sxyuw.OW6sCKd2L3LDkKe7LU1gxMbPE3f8f2V2', NULL, '2022-11-18 15:08:02', '2022-11-18 15:08:02', 1),
-(2, 'User Plane', 'user@gmail.com', NULL, '$2y$10$O8i40F49jXvotUUxxnCtOupr2HzbN5G0ZvjGBp16QbahWXRj.ddz2', NULL, '2022-11-18 15:08:34', '2022-11-18 15:08:34', 0),
-(3, 'User Plane2', 'user2@gmail.com', NULL, '$2y$10$mLfXo0GbbYdHsdQqqZPe4erjpJVV8KgKk2sf4ndkvytCkCXBaZgMC', NULL, '2022-12-04 04:43:15', '2022-12-04 04:43:15', 0);
+(5, 'MAFIDUL ISLAM', 'admin@gmail.com', NULL, '$2y$10$2jHP8X6uI5F14QjhrZsxSeI11m9JI0R0BhuGmEbU6vQ9DIYqYix6O', NULL, '2022-12-17 16:30:05', '2022-12-17 16:30:05', 1);
 
 -- --------------------------------------------------------
 
@@ -461,13 +386,6 @@ CREATE TABLE `user_details` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `user_details`
---
-
-INSERT INTO `user_details` (`id`, `user_id`, `phone`, `pin_code`, `address`, `created_at`, `updated_at`) VALUES
-(1, 2, '8822964555', '781307', 'mandia gaon, mandia , barpeta, assam,781308', '2022-12-04 07:37:01', '2022-12-04 07:39:04');
 
 -- --------------------------------------------------------
 
@@ -703,7 +621,7 @@ ALTER TABLE `sliders`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `user_details`
